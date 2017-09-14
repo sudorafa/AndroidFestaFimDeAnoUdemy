@@ -10,7 +10,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    tools:context="com.example.orafa.androidfestafimdeanoudemy.DetailsActivity">
+    tools:context="com.example.orafa.androidfestafimdeanoudemy.views.DetailsActivity">
 
 
     <TextView

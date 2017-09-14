@@ -1,4 +1,4 @@
-package com.example.orafa.androidfestafimdeanoudemy;
+package com.example.orafa.androidfestafimdeanoudemy.views;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.example.orafa.androidfestafimdeanoudemy.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
