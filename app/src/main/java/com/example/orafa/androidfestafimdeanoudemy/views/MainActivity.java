@@ -11,10 +11,13 @@ import com.example.orafa.androidfestafimdeanoudemy.R;
 import com.example.orafa.androidfestafimdeanoudemy.constantes.FimDeAnoConstants;
 import com.example.orafa.androidfestafimdeanoudemy.util.SecurityPreferences;
 
+import java.util.Calendar;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ViewHolder mViewHolder = new ViewHolder();
     private SecurityPreferences mSecurityPreferences;
+    private static final java.text.SimpleDateFormat SIMPLE_DATE_FORMAT = new java.text.SimpleDateFormat("dd/MM/yyyy");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +32,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         this.mSecurityPreferences = new SecurityPreferences(this);
 
-        this.verifyPreference();
+        this.mViewHolder.textToday.setText(SIMPLE_DATE_FORMAT.format(Calendar.getInstance().getTime()));
 
+        String daysLeft = String.format("%s %s", String.valueOf(this.getDaysLeftEndOfYear()), getString(R.string.dias));
+        this.mViewHolder.textDaysLeft.setText(daysLeft);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        this.verifyPreference();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     @Override
@@ -48,6 +79,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //chama a activity
             startActivity(intent);
         }
+    }
+
+    private int getDaysLeftEndOfYear() {
+        Calendar calendarToday = Calendar.getInstance();
+        int today = calendarToday.get(Calendar.DAY_OF_YEAR);
+
+        Calendar calendarLastDay = Calendar.getInstance();
+        int dayDeceber31 = calendarLastDay.getActualMaximum(Calendar.DAY_OF_YEAR);
+
+        return dayDeceber31 - today;
+
     }
 
     private static class ViewHolder {
