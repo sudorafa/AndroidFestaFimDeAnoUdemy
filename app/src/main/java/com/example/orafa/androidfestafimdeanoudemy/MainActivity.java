@@ -19,8 +19,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         this.mViewHolder.textToday = (TextView) findViewById(R.id.text_today);
-        this.mViewHolder.textToday = (TextView) findViewById(R.id.text_days_left);
-        this.mViewHolder.textToday = (Button) findViewById(R.id.button_confirm);
+        this.mViewHolder.textDaysLeft = (TextView) findViewById(R.id.text_days_left);
+        this.mViewHolder.buttonConfirm = (Button) findViewById(R.id.button_confirm);
 
         this.mViewHolder.buttonConfirm.setOnClickListener(this);
 
