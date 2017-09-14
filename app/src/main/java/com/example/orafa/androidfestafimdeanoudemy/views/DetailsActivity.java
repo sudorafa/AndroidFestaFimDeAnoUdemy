@@ -25,6 +25,8 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
         this.mViewHolder.checkParticipate.setOnClickListener(this);
 
+        this.loadDataFromActivity();
+
     }
 
     @Override
@@ -33,10 +35,26 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
         //Lógica para salvar a resposta
         if (id == R.id.check_participate) {
-            if(this.mViewHolder.checkParticipate.isChecked()){
+            if (this.mViewHolder.checkParticipate.isChecked()) {
                 this.mSeSecurityPreferences.storeString(FimDeAnoConstants.PRESENCE, FimDeAnoConstants.CONFIRMED_WILL_GO);
-            }else{
+            } else {
                 this.mSeSecurityPreferences.storeString(FimDeAnoConstants.PRESENCE, FimDeAnoConstants.CONFIRMED_WONT_GO);
+            }
+        }
+    }
+
+    //pegar dados passados da activity que chamou essa
+    private void loadDataFromActivity() {
+        // gegando extras (dados passados da outra activity)
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            //variável para saber o que tem em FimDeAnoConstants.PRESENCE
+            String presence = extras.getString(FimDeAnoConstants.PRESENCE);
+            // verifica status da variavel criada para marcar ou nao o check
+            if (presence.equals(FimDeAnoConstants.CONFIRMED_WILL_GO)) {
+                this.mViewHolder.checkParticipate.setChecked(true);
+            } else {
+                this.mViewHolder.checkParticipate.setChecked(false);
             }
         }
     }
