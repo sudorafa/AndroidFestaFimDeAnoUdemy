@@ -24,6 +24,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //desabilita o título do app na action
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        //habilita para mostrar na action o Icon declarado
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+
+
         this.mViewHolder.textToday = (TextView) findViewById(R.id.text_today);
         this.mViewHolder.textDaysLeft = (TextView) findViewById(R.id.text_days_left);
         this.mViewHolder.buttonConfirm = (Button) findViewById(R.id.button_confirm);

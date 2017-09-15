@@ -4,6 +4,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context="com.example.orafa.androidfestafimdeanoudemy.views.MainActivity">
 
     <TextView
@@ -11,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hoje"
+        android:textColor="@color/colorPrimaryText"
         android:textSize="20sp" />
 
     <TextView
@@ -20,13 +22,14 @@
         android:layout_marginLeft="10dp"
         android:layout_toRightOf="@id/text_label_today"
         android:text="@string/hoje"
+        android:textColor="@color/colorPrimaryText"
         android:textSize="25sp" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@id/text_today"
-        android:background="@color/colorPrimary" />
+        android:background="@color/colorDivider" />
 
     <TextView
         android:id="@+id/text_label_days_left"
@@ -36,7 +39,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="120dp"
         android:text="@string/dias_restantes_para_o_fim_do_ano"
-
         android:textSize="20sp" />
 
     <TextView
@@ -47,6 +49,7 @@
         android:layout_centerHorizontal="true"
         android:padding="20sp"
         android:text="325 Dias"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="40sp" />
 
     <Button
@@ -54,8 +57,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="@drawable/round_corner_button"
         android:padding="20dp"
         android:text="sim/não/não confirmado"
+        android:textColor="@color/colorTextWhite"
         android:textSize="20sp" />
 
 
