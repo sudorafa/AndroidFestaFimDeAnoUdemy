@@ -16,11 +16,22 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/voc_vai_participar" />
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:text="@string/voc_vai_participar"
+        android:textSize="30sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary" />
 
     <CheckBox
         android:id="@+id/check_participate"
+        android:layout_weight="8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/voc_vai_participar" />
+        android:gravity="center"
+        android:text="@string/voc_vai_participar"
+        android:textSize="30sp" />
 </LinearLayout>
