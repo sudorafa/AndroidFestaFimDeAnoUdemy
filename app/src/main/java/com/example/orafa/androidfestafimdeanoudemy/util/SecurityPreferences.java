@@ -16,10 +16,12 @@ public class SecurityPreferences {
         this.mSharedPreferences = context.getSharedPreferences("FimDeAno", Context.MODE_PRIVATE);
     }
 
+    //Salvar valor enviado pra cá a partir da key
     public void storeString(String key, String value) {
         this.mSharedPreferences.edit().putString(key, value).apply();
     }
 
+    //Recuperar o método armazenado aqui
     public String getStoredString(String key) {
         return this.mSharedPreferences.getString(key, "");
     }
